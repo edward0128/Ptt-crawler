@@ -16,8 +16,9 @@ ap-get install docker
 docker run -dit -p 8888:8888 -p 22:9527 jupyter:v1
 
 `````
-```
-root@TATUNG:/home/gemini/jupyter# docker run -it -p 8888:8888 -p 9527:22 jupyter:v1
+執行系統後，會出現以下訊息
+
+root@XXXX:/home/gemini/jupyter# docker run -it -p 8888:8888 -p 9527:22 jupyter:v1
  * Starting OpenBSD Secure Shell server sshd                                                                                                              [ OK ]
 [I 08:20:46.877 NotebookApp] Writing notebook server cookie secret to /home/jovyan/.local/share/jupyter/runtime/notebook_cookie_secret
 [I 08:20:47.301 NotebookApp] JupyterLab extension loaded from /opt/conda/lib/python3.6/site-packages/jupyterlab
@@ -35,3 +36,14 @@ root@TATUNG:/home/gemini/jupyter# docker run -it -p 8888:8888 -p 9527:22 jupyter
 [I 08:21:25.510 NotebookApp] 302 GET /tree? (192.168.54.34) 1.36ms
 [I 08:21:48.025 NotebookApp] 302 POST /login?next=%2Ftree%3F (192.168.54.34) 4.43ms
 ```
+```
+   使用瀏覽器連結到 jupyter
+   http://10.18.188.80:8888/?token=141deac21ecb4f436a115303b95079c53f2080ed2c483e29
+   
+   環境建置完成，如果測試完成，可以使用 docker run -dit 將此服務跑在後端
+   
+
+```
+
+
+
