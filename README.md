@@ -16,6 +16,7 @@ ap-get install docker
 docker run -dit -p 8888:8888 -p 22:9527 jupyter:v1
 
 `````
+`````
 執行系統後，會出現以下訊息
 
 root@XXXX:/home/gemini/jupyter# docker run -it -p 8888:8888 -p 9527:22 jupyter:v1
