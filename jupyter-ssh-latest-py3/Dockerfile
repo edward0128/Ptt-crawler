@@ -21,7 +21,9 @@ RUN pip3 install jupyter
 EXPOSE 8888
 EXPOSE 22
 COPY my_wrapper_script.sh my_wrapper_script.sh
+COPY .jupyter /root/.jupyter
+COPY tensorflow-for-poets-2 /home/tensorflow-for-poets-2 
+COPY Training_flower_demo.ipynb /home/Training_flower_demo.ipynb
+# setting password ssh and jupyter
 CMD ./my_wrapper_script.sh $password
   
-#EXPOSE 22
-#CMD ["/usr/sbin/sshd", "-D"]

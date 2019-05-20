@@ -1,18 +1,22 @@
 #!/bin/bash
 
+# change ssh password
 touch /home/$1
 echo root:$1 | chpasswd
+
+# change jupyter password
+bash /root/.jupyter/generate_password.sh $1
+
 # Start the first process
 #service ssh start
-#jupyter notebook
-#status=$?
-#if [ $status -ne 0 ]; then
-#  echo "Failed to start my_first_process: $status"
-#  exit $status
-#fi
-
-
 /etc/init.d/ssh start
+jupyter notebook --allow-root
+status=$?
+if [ $status -ne 0 ]; then
+  echo "Failed to start my_first_process: $status"
+  exit $status
+fi
+
 status=$?
 if [ $status -ne 0 ]; then
   echo "Failed to start my_first_process: $status"
@@ -34,8 +38,8 @@ fi
 # Otherwise it loops forever, waking up every 60 seconds
 
 while sleep 60; do
-  #ps aux |grep jupyter |grep -q -v grep
-  #PROCESS_1_STATUS=$?
+  ps aux |grep jupyter |grep -q -v grep
+  PROCESS_1_STATUS=$?
   ps aux |grep ssh |grep -q -v grep
   PROCESS_2_STATUS=$?
   # If the greps above find anything, they exit with 0 status
