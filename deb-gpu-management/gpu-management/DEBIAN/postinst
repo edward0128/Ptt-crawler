@@ -1,0 +1,7 @@
+#!/bin/bash
+#echo 'do something after file install'
+#touch /home/something_after_file_install
+#cd /opt/gemini/RC3-beta1/RC3-beta1/deploy_tools
+echo 'install the ansible module'
+cd /opt/gemini/GPU_management_node/
+bash /opt/gemini/GPU_management_node/autoinstall_ansible.sh

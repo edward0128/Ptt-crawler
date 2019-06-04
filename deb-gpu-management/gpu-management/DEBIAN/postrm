@@ -1,0 +1,4 @@
+#!/bin/bash
+#echo 'do something after file remove'
+
+#touch /home/rm_test

@@ -1,0 +1,4 @@
+#!/bin/bash
+#echo 'do something before file install'
+
+#touch /home/something_before_file_install

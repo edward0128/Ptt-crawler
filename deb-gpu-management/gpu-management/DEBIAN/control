@@ -1,0 +1,10 @@
+Package: gpu-management
+Version: 01-RC3-beta1
+Architecture: all
+Maintainer: edward.wang <edward.wang@geminiopencloud.com>
+Installed-Size: 24
+Depends: git (>=1:2.7.4), sshpass (>=1.05-1), python-pip (>=8.1), python-dev (>=2.7.12), build-essential (>=12.1)
+Section: installer
+Priority: optional
+Homepage: https://github.com/ccmagithub/agena/tree/develop/GPU_management_node/ansible/roles
+Description: GPU-Management installer. Copyright 2012 Geminiopencloud Inc. All rights reserved
