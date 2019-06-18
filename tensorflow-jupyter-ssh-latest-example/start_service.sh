@@ -2,27 +2,25 @@
 
 useradd edward
 
-echo edward:$1 | chpasswd
+echo $2:$1 | chpasswd
 # change ssh password
-touch /home/$1
 echo root:$1 | chpasswd
 
 # change jupyter password
-bash /root/.jupyter/generate_password.sh $1
+bash /root/.jupyter/config_generate.sh $1
 
 # Start the first process
 #service ssh start
 /etc/init.d/ssh start
+status=$?
+if [ $status -ne 0 ]; then
+  echo "Failed to start ssh: $status"
+  exit $status
+fi
 jupyter notebook --allow-root
 status=$?
 if [ $status -ne 0 ]; then
-  echo "Failed to start my_first_process: $status"
-  exit $status
-fi
-
-status=$?
-if [ $status -ne 0 ]; then
-  echo "Failed to start my_first_process: $status"
+  echo "Failed to start jupyter: $status"
   exit $status
 fi
 
