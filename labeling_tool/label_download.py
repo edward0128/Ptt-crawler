@@ -5,6 +5,7 @@ parser = ArgumentParser()
 parser.add_argument("json", help="labeling json file")
 parser.add_argument("-d", "--dest", help="dataset directory path", dest="dest", default="/tmp/")
 
+
 args = parser.parse_args()
 print("json file path:", args.json)
 print("dataset path", args.dest)
@@ -23,14 +24,14 @@ for element in dataset:
     path +="/"
     path += element['Project Name']
     path +="/"
-    path += element['Label']['model']
+    path += element['Label']['flower']
     path +="/"
     if not os.path.isdir(path):
      os.makedirs(path)
 
     path += element['External ID']
 
-    print ("ProjectName:"+element['Project Name']+"   "+"LabelName:"+element['Label']['model'])
+    print ("ProjectName:"+element['Project Name']+"   "+"LabelName:"+element['Label']['flower'])
     print (element['External ID'])
 
     #get data url
